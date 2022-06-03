@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  .highlight {
+    color: white;
+    background: #673AB7;
+}
+
+.notHighlight {
+    color: red;
+    background: #252525;
+}

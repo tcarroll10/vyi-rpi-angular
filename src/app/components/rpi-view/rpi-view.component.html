@@ -1,0 +1,67 @@
+
+<h2>VYI Results</h2>
+<div class="card card-body mb-3">
+  
+  <button (click)="getResponseByDivision('Black')" class="btn btn-dark btn-block">Black Division</button>
+  <button (click)="getResponseByDivision('Red')" class="btn btn-dark btn-block">Red Division</button>
+
+</div>
+
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!-- Team ID Definition -->
+  <ng-container matColumnDef="teamid">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by teamid"> Team ID </th>
+    <td mat-cell *matCellDef="let row"> {{row.teamId}} </td>
+  </ng-container>
+
+  <!-- Team Name Definition -->
+  <ng-container matColumnDef="teamName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by teamName"> Team Name </th>
+    <td mat-cell *matCellDef="let row"> {{row.teamName}} </td>
+  </ng-container>
+
+  <!-- Games Played Definition -->
+  <ng-container matColumnDef="gamesPlayed">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gamesPlayed"> Games Played </th>
+    <td mat-cell *matCellDef="let row"> {{row.gamesPlayed}} </td>
+  </ng-container>
+
+  <!-- Games Won Definition -->
+  <ng-container matColumnDef="gamesWon">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gamesWon"> Games Won </th>
+    <td mat-cell *matCellDef="let row"> {{row.gamesWon}} </td>
+  </ng-container>
+
+  <!-- WinRate Definition -->
+  <ng-container matColumnDef="winRate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by winRate"> Win Rate </th>
+    <td mat-cell *matCellDef="let row"> {{row.winRate}} </td>
+  </ng-container>
+
+  <!-- oppntsAvgWinRate Definition -->
+  <ng-container matColumnDef="oppntsAvgWinRate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by oppntsAvgWinRate">
+      oppntsAvgWinRate </th>
+    <td mat-cell *matCellDef="let row"> {{row.oppntsAvgWinRate}} </td>
+  </ng-container>
+
+  <!-- oppntsOfOppntsAvgWinRate Definition -->
+  <ng-container matColumnDef="oppntsOfOppntsAvgWinRate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by oppntsOfOppntsAvgWinRate">
+      oppntsOfOppntsAvgWinRate </th>
+    <td mat-cell *matCellDef="let row"> {{row.oppntsOfOppntsAvgWinRate}} </td>
+  </ng-container>
+
+  <!-- rpi Definition -->
+  <ng-container matColumnDef="rpi">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by rpi"> Rpi </th>
+    <td mat-cell *matCellDef="let row"> {{row.rpi}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

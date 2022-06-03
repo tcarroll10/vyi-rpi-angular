@@ -1,0 +1,56 @@
+<div class="container mt-5">
+
+
+    <h2>Games</h2>
+    <a [routerLink]="['game/add']" class="btn btn-primary mt-5 mb-3" mt-5>Add Game</a>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Game ID </th>
+            <td mat-cell *matCellDef="let game"> {{game.id}} </td>
+        </ng-container>
+      
+    </table>
+
+
+
+
+    <table class="table table-striped w-auto">
+        <thead>
+            <th>Game ID</th>
+            <th>Game Date</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Winning Team</th>
+            <th>Home Teams Points</th>
+            <th>Away Team Points</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let game of games">
+                <td>{{game.id}}</td>
+                <td>{{game.gameDt}}</td>
+                <td>{{game.homeId}}</td>
+                <td>{{game.awayId}}</td>
+                <td>{{game.winnerId}}</td>
+                <td>{{game.amtPtsHome}}</td>
+                <td>{{game.amtPtsAway}}</td>
+                <td>
+
+                    <a [routerLink]="['game/',game.id]"><i class="fa fa-edit"></i></a>
+                    &nbsp;
+
+                    <i (click)="onDelete(game.id)" class="fa fa-trash"></i>
+
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+
+</div>
